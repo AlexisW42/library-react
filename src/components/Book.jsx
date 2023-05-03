@@ -1,5 +1,5 @@
 function Book(props) {
-  const { title, author, pages, read } = props;
+  const { title, author, pages, read } = props
   return (
     <div>
       <h2>{title}</h2>
@@ -7,7 +7,7 @@ function Book(props) {
       <p>pages: {pages}</p>
       <p>{read ? 'read yet' : 'not read yet'}</p>
     </div>
-  );
+  )
 }
 
-export default Book;
+export default Book
