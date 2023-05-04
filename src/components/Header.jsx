@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <div className="h-16 grid grid-cols-4 bg-indigo-900 text-gray-200 dark:bg-slate-900">
+    <div className="h-16 grid grid-cols-4 bg-indigo-900 text-gray-200 dark:bg-slate-900 dark:border-b-2 dark:border-b-slate-800">
       <div className="grid content-center justify-center col-start-1 text-3xl">
         Library
       </div>
