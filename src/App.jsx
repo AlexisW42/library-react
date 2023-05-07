@@ -1,11 +1,11 @@
-import BookList from './components/BookList'
 import Header from './components/Header'
+import AppRouter from './components/AppRouter'
 
 function App() {
   return (
     <>
       <Header />
-      <BookList />
+      <AppRouter />
     </>
   )
 }
