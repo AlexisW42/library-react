@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react'
 import Book from './Book'
-import booksArray from './booksArray'
 
 function BookList(props) {
   const { books } = props
