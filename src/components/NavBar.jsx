@@ -4,6 +4,8 @@ function NavBar() {
       <ul>
         <li className="flex flex-row">
           <a href="/">Home</a>
+        </li>
+        <li>
           <a href="/about">About</a>
         </li>
       </ul>
