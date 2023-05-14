@@ -6,17 +6,17 @@ function Header(props) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="h-fit mb-4 bg-indigo-900 text-gray-200 dark:bg-slate-900 dark:border-b-2 dark:border-b-slate-800">
+    <div className="mb-4 h-fit bg-indigo-900 text-gray-200 dark:border-b-2 dark:border-b-slate-800 dark:bg-slate-900">
       <nav>
-        <div className="flex flex-wrap sm:flex-nowrap justify-between p-4 items-center md:justify-between mx-auto">
-          <div className="justify-center col-start-1 text-3xl">Library</div>
-          <div className="px-4 justify-self-center sm:justify-self-start col-start-2 col-end-3">
+        <div className="mx-auto flex flex-wrap items-center justify-between p-4 sm:flex-nowrap md:justify-between">
+          <div className="col-start-1 justify-center text-3xl">Library</div>
+          <div className="col-start-2 col-end-3 justify-self-center px-4 sm:justify-self-start">
             Store information about books
           </div>
           <button onClick={darkMode}>
             {darkToggle ? (
               <svg
-                className="w-5 ml-2 h-5 text-white"
+                className="ml-2 h-5 w-5 text-white"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1.5"
@@ -32,7 +32,7 @@ function Header(props) {
               </svg>
             ) : (
               <svg
-                className="w-5 ml-2 h-5 text-white"
+                className="ml-2 h-5 w-5 text-white"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1.5"
@@ -54,10 +54,10 @@ function Header(props) {
               data-collapse-toggle="navbar-search"
               aria-controls="navbar-search"
               aria-expanded="false"
-              className="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1"
+              className="mr-1 rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700 md:hidden"
             >
               <svg
-                className="w-5 h-5"
+                className="h-5 w-5"
                 aria-hidden="true"
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -71,10 +71,10 @@ function Header(props) {
               </svg>
               <span className="sr-only">Search</span>
             </button>
-            <div className="mx-6 relative hidden md:block">
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <div className="relative mx-6 hidden md:block">
+              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                 <svg
-                  className="w-5 h-5 text-gray-500"
+                  className="h-5 w-5 text-gray-500"
                   aria-hidden="true"
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -91,7 +91,7 @@ function Header(props) {
               <input
                 type="text"
                 id="search-navbar"
-                className="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Search..."
               />
             </div>
@@ -99,13 +99,13 @@ function Header(props) {
               onClick={() => setIsOpen(!isOpen)}
               data-collapse-toggle="navbar-search"
               type="button"
-              className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              className="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
               aria-controls="navbar-search"
               aria-expanded={`${isOpen ? 'true' : 'false'}`}
             >
               <span className="sr-only">Open menu</span>
               <svg
-                className="w-6 h-6"
+                className="h-6 w-6"
                 aria-hidden="true"
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -122,13 +122,13 @@ function Header(props) {
           <div
             className={`items-center justify-between ${
               !isOpen ? 'hidden' : ''
-            } w-full md:flex md:w-auto md:order-1`}
+            } w-full md:order-1 md:flex md:w-auto`}
             id="navbar-search"
           >
             <div className="relative mt-3 md:hidden">
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                 <svg
-                  className="w-5 h-5 text-gray-500"
+                  className="h-5 w-5 text-gray-500"
                   aria-hidden="true"
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -144,7 +144,7 @@ function Header(props) {
               <input
                 type="text"
                 id="search-navbar"
-                className="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Search..."
               />
             </div>
