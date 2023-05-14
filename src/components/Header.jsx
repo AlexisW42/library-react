@@ -2,13 +2,17 @@ import { useState } from 'react'
 import NavBar from './NavBar'
 
 function Header(props) {
-  const { darkMode, darkToggle } = props
+  const { darkMode, darkToggle, setSearchText } = props
   const [isOpen, setIsOpen] = useState(false)
+
+  const handleChange = (event) => {
+    setSearchText(event.target.value)
+  }
 
   return (
     <div className="mb-4 h-fit bg-indigo-900 text-gray-200 dark:border-b-2 dark:border-b-slate-800 dark:bg-slate-900">
       <nav>
-        <div className="mx-auto flex flex-wrap items-center justify-between p-4 sm:flex-nowrap md:justify-between">
+        <div className="mx-auto flex flex-wrap items-center justify-between p-4 md:justify-between">
           <div className="col-start-1 justify-center text-3xl">Library</div>
           <div className="col-start-2 col-end-3 justify-self-center px-4 sm:justify-self-start">
             Store information about books
@@ -93,6 +97,7 @@ function Header(props) {
                 id="search-navbar"
                 className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Search..."
+                onChange={handleChange}
               />
             </div>
             <button
@@ -146,6 +151,7 @@ function Header(props) {
                 id="search-navbar"
                 className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 placeholder="Search..."
+                onChange={handleChange}
               />
             </div>
             <NavBar />

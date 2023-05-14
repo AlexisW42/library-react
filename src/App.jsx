@@ -4,6 +4,7 @@ import AppRouter from './components/AppRouter'
 import Footer from './components/Footer'
 
 function App() {
+  const [searchText, setSearchText] = useState('')
   const [darkToggle, setDarkToggle] = useState(
     window.matchMedia('(prefers-color-scheme: dark').matches
   )
@@ -25,8 +26,12 @@ function App() {
 
   return (
     <>
-      <Header darkMode={ToggleDarkMode} darkToggle={darkToggle} />
-      <AppRouter />
+      <Header
+        darkMode={ToggleDarkMode}
+        darkToggle={darkToggle}
+        setSearchText={setSearchText}
+      />
+      <AppRouter searchText={searchText} />
       <Footer />
     </>
   )

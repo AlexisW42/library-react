@@ -4,7 +4,7 @@ import BookList from './BookList'
 import { useEffect, useState } from 'react'
 import booksArray from './booksArray.js'
 
-function AppRouter() {
+function AppRouter({ searchText }) {
   const [books, setBooks] = useState([])
 
   useEffect(() => {
@@ -20,7 +20,16 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<BookList books={books} />} />
+        <Route
+          path="/"
+          element={
+            <BookList
+              books={books}
+              searchText={searchText}
+              setBooks={setBooks}
+            />
+          }
+        />
         <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
