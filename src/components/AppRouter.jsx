@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import About from './About'
 import BookList from './BookList'
-import { useEffect, useState } from 'react'
+import AddBooksButton from './AddBooksButton'
 import booksArray from './booksArray.js'
 
 function AppRouter({ searchText }) {
@@ -23,11 +24,14 @@ function AppRouter({ searchText }) {
         <Route
           path="/"
           element={
-            <BookList
-              books={books}
-              searchText={searchText}
-              setBooks={setBooks}
-            />
+            <>
+              <BookList
+                books={books}
+                searchText={searchText}
+                setBooks={setBooks}
+              />
+              <AddBooksButton />
+            </>
           }
         />
         <Route path="/about" element={<About />} />
