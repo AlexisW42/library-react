@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 import Header from './components/Header'
 import AppRouter from './components/AppRouter'
 import Footer from './components/Footer'
@@ -20,14 +20,12 @@ function App() {
   })
 
   function bodyDark() {
-    if (darkToggle) {
-      document.querySelector('body').classList.add('dark')
-    } else {
-      document.querySelector('body').classList.remove('dark')
-    }
+    darkToggle
+      ? document.querySelector('body').classList.add('dark')
+      : document.querySelector('body').classList.remove('dark')
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     bodyDark()
   })
 
