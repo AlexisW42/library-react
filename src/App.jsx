@@ -5,14 +5,26 @@ import Footer from './components/Footer'
 
 function App() {
   const [searchText, setSearchText] = useState('')
-  const [darkToggle, setDarkToggle] = useState(
-    window.matchMedia('(prefers-color-scheme: dark').matches
-  )
+  const [darkToggle, setDarkToggle] = useState(() => {
+    if (localStorage.getItem('theme') === null) {
+      localStorage.setItem(
+        'theme',
+        window.matchMedia('(prefers-color-scheme: dark').matches
+          ? 'dark'
+          : 'light'
+      )
+      return !window.matchMedia('(prefers-color-scheme: dark').matches
+    } else {
+      return localStorage.getItem('theme') === 'dark'
+    }
+  })
 
   function bodyDark() {
-    darkToggle
-      ? document.getElementsByTagName('body')[0].classList.add('dark')
-      : document.getElementsByTagName('body')[0].classList.remove('dark')
+    if (darkToggle) {
+      document.querySelector('body').classList.add('dark')
+    } else {
+      document.querySelector('body').classList.remove('dark')
+    }
   }
 
   useEffect(() => {
@@ -22,6 +34,7 @@ function App() {
   function ToggleDarkMode() {
     setDarkToggle(!darkToggle)
     bodyDark()
+    localStorage.setItem('theme', !darkToggle ? 'dark' : 'light')
   }
 
   return (
