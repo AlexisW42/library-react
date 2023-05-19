@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react'
+import { useState, useLayoutEffect, useEffect } from 'react'
 import Header from './components/Header'
 import AppRouter from './components/AppRouter'
 import Footer from './components/Footer'
@@ -26,6 +26,10 @@ function App() {
   }
 
   useLayoutEffect(() => {
+    bodyDark()
+  })
+
+  useEffect(() => {
     bodyDark()
   })
 
