@@ -20,7 +20,7 @@ function AppRouter({ searchText }) {
 
   return (
     <BrowserRouter basename={import.meta.env.DEV ? '/' : '/library-react/'}>
-      <Routes>
+      <Routes basename={import.meta.env.DEV ? '/' : '/library-react/'}>
         <Route
           path="/"
           element={
