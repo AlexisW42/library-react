@@ -1,9 +1,9 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import About from './About'
 import BookList from './BookList'
 import AddBooksButton from './AddBooksButton'
-import booksArray from './booksArray.js'
+import booksArray from './booksArray'
 
 function AppRouter({ searchText }) {
   const [books, setBooks] = useState([])
@@ -19,7 +19,7 @@ function AppRouter({ searchText }) {
   }, [])
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route
           path="/"
@@ -36,7 +36,7 @@ function AppRouter({ searchText }) {
         />
         <Route path="/about" element={<About />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 export default AppRouter
