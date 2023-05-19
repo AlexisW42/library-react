@@ -18,11 +18,15 @@ function AppRouter({ searchText }) {
     }
   }, [])
 
+  function basename() {
+    return import.meta.env.DEV ? '/' : '/library-react/'
+  }
+
   return (
-    <BrowserRouter basename={import.meta.env.DEV ? '/' : '/library-react/'}>
-      <Routes basename={import.meta.env.DEV ? '/' : '/library-react/'}>
+    <BrowserRouter>
+      <Routes>
         <Route
-          path="/"
+          path={basename()}
           element={
             <>
               <BookList
@@ -34,7 +38,7 @@ function AppRouter({ searchText }) {
             </>
           }
         />
-        <Route path="/about" element={<About />} />
+        <Route path={`${basename()}about`} element={<About />} />
       </Routes>
     </BrowserRouter>
   )
