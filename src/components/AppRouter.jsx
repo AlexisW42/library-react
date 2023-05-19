@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import About from './About'
 import BookList from './BookList'
@@ -18,31 +18,23 @@ function AppRouter({ searchText }) {
     }
   }, [])
 
-  function basename() {
-    console.log(import.meta.env.DEV)
-    if (import.meta.env.DEV) return '/'
-    return '/library-react/'
-  }
-
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path={basename()}
-          element={
-            <>
-              <BookList
-                books={books}
-                searchText={searchText}
-                setBooks={setBooks}
-              />
-              <AddBooksButton />
-            </>
-          }
-        />
-        <Route path={`${basename()}about`} element={<About />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
+            <BookList
+              books={books}
+              searchText={searchText}
+              setBooks={setBooks}
+            />
+            <AddBooksButton />
+          </>
+        }
+      />
+      <Route path="/about" element={<About />} />
+    </Routes>
   )
 }
 export default AppRouter
