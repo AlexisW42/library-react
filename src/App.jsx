@@ -13,7 +13,7 @@ function App() {
           ? 'dark'
           : 'light'
       )
-      return !window.matchMedia('(prefers-color-scheme: dark').matches
+      return window.matchMedia('(prefers-color-scheme: dark').matches
     } else {
       return localStorage.getItem('theme') === 'dark'
     }
