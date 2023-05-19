@@ -1,3 +1,5 @@
+import coverImagePlaceholder from '../assets/images/cover-placeholder.jpg'
+
 function Book(props) {
   const { title, author, pages, read, image } = props
 
@@ -7,7 +9,7 @@ function Book(props) {
     ) : (
       <img
         className="mx-auto h-52"
-        src="src/assets/images/cover-placeholder.jpg"
+        src={coverImagePlaceholder}
         alt={`cover of ${title}`}
       />
     )
