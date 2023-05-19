@@ -19,6 +19,7 @@ function AppRouter({ searchText }) {
   }, [])
 
   function basename() {
+    console.log(import.meta.env.DEV)
     return import.meta.env.DEV ? '/' : '/library-react/'
   }
 
