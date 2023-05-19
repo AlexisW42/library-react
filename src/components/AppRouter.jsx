@@ -20,7 +20,8 @@ function AppRouter({ searchText }) {
 
   function basename() {
     console.log(import.meta.env.DEV)
-    return import.meta.env.DEV ? '/' : '/library-react/'
+    if (import.meta.env.DEV) return '/'
+    return '/library-react/'
   }
 
   return (
