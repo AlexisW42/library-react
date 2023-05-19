@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import About from './About'
 import BookList from './BookList'
@@ -19,7 +19,7 @@ function AppRouter({ searchText }) {
   }, [])
 
   return (
-    <HashRouter>
+    <BrowserRouter basename={import.meta.env.DEV ? '/' : '/library-react/'}>
       <Routes>
         <Route
           path="/"
@@ -36,7 +36,7 @@ function AppRouter({ searchText }) {
         />
         <Route path="/about" element={<About />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 export default AppRouter
