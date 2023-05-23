@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import About from './About'
 import BookList from './BookList'
+import AddBook from './AddBook'
 import AddBooksButton from './AddBooksButton'
 import booksArray from './booksArray'
 
@@ -34,6 +35,7 @@ function AppRouter({ searchText }) {
         }
       />
       <Route path="/about" element={<About />} />
+      <Route path="/addbook" element={<AddBook />} />
     </Routes>
   )
 }
