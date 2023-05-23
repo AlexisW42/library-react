@@ -154,7 +154,7 @@ function Header(props) {
                 onChange={handleChange}
               />
             </div>
-            <NavBar />
+            <NavBar setIsOpen={setIsOpen} />
           </div>
         </div>
       </nav>
