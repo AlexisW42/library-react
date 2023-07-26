@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 function NavBar({ setIsOpen }) {
   return (
@@ -6,7 +7,11 @@ function NavBar({ setIsOpen }) {
       <li>
         <Link to="/" onClick={() => setIsOpen(false)}>
           <p
-            className="block rounded bg-blue-700 py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0 md:text-blue-700 md:dark:text-blue-500"
+            className={`block rounded ${
+              useLocation().pathname == '/'
+                ? 'bg-blue-700 md:text-blue-700 md:dark:text-blue-500'
+                : ''
+            } py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0`}
             aria-current="page"
           >
             Home
@@ -15,7 +20,13 @@ function NavBar({ setIsOpen }) {
       </li>
       <li>
         <Link to="/about" onClick={() => setIsOpen(false)}>
-          <p className="block rounded py-2 pl-3 pr-4 text-white hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500">
+          <p
+            className={`block rounded ${
+              useLocation().pathname == '/about'
+                ? 'bg-blue-700 md:text-blue-700 md:dark:text-blue-500'
+                : ''
+            } py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0`}
+          >
             About
           </p>
         </Link>
