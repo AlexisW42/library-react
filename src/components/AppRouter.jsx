@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import About from './About'
-import BookList from './BookList'
-import AddBook from './AddBook'
+import About from '../pages/About'
+import BookList from '../pages/BookList'
+import AddBook from '../pages/AddBook'
 import AddBooksButton from './AddBooksButton'
 import booksArray from './booksArray'
 

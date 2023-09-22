@@ -1,6 +1,6 @@
 function AddBooksButton() {
   return (
-    <div className="fixed bottom-16 right-5 h-16 w-16 rounded-full bg-blue-800 text-gray-200 sm:bottom-20">
+    <div className="fixed bottom-16 right-5 h-16 w-16 rounded-full bg-indigo-900 text-gray-200 dark:bg-blue-800 sm:bottom-20">
       <button>
         <a href="/addbook">
           <svg
