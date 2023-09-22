@@ -25,7 +25,9 @@ function AddBook() {
           placeholder="Search for books to add to your library"
         />
       </div>
-      AddBook
+      <button className="mt-4 max-h-min w-fit max-w-min justify-center self-center justify-self-center rounded-lg border border-gray-300 bg-indigo-900 p-2 text-gray-200 dark:bg-blue-800">
+        AddBook
+      </button>
     </div>
   )
 }

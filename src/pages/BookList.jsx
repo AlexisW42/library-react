@@ -1,4 +1,4 @@
-import Book from './Book'
+import Book from '../components/Book'
 
 function BookList(props) {
   const { books, searchText } = props
