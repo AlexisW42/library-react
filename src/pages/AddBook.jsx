@@ -1,4 +1,18 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 function AddBook() {
+  const navigate = useNavigate()
+  const [searchText, setSearchText] = useState(null)
+
+  const handleChange = (event) => {
+    setSearchText(event.target.value)
+  }
+
+  const search = (text) => {
+    navigate(`/addbook/${text}`)
+  }
+
   return (
     <div className="mb-8 mt-8 grid min-w-[90vw] max-w-6xl grid-flow-row self-center justify-self-center rounded-md bg-slate-50 p-8 text-center dark:bg-slate-800 dark:text-gray-200">
       <div className="relative w-fit justify-center self-center justify-self-center">
@@ -23,9 +37,13 @@ function AddBook() {
           id="search-books"
           className="w-[19rem] rounded-lg border border-gray-300 bg-gray-50 p-2 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 md:w-80"
           placeholder="Search for books to add to your library"
+          onChange={handleChange}
         />
       </div>
-      <button className="mt-4 max-h-min w-fit max-w-min justify-center self-center justify-self-center rounded-lg border border-gray-300 bg-indigo-900 p-2 text-gray-200 dark:bg-blue-800">
+      <button
+        onClick={() => search(searchText)}
+        className="mt-4 max-h-min w-fit max-w-min justify-center self-center justify-self-center rounded-lg border border-gray-300 bg-indigo-900 p-2 text-gray-200 dark:bg-blue-800"
+      >
         AddBook
       </button>
     </div>

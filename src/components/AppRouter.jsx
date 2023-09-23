@@ -5,6 +5,7 @@ import BookList from '../pages/BookList'
 import AddBook from '../pages/AddBook'
 import AddBooksButton from './AddBooksButton'
 import booksArray from './booksArray'
+import BooksResults from '../pages/BooksResults'
 
 function AppRouter({ searchText }) {
   const [books, setBooks] = useState([])
@@ -36,6 +37,7 @@ function AppRouter({ searchText }) {
       />
       <Route path="/about" element={<About />} />
       <Route path="/addbook" element={<AddBook />} />
+      <Route path="/addbook/:search" element={<BooksResults />} />
     </Routes>
   )
 }
