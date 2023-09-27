@@ -23,10 +23,19 @@ function BooksResults(props) {
   }, [search])
 
   function evaluate() {
-    if (error) return error.message
+    if (error)
+      return (
+        <div className="mb-8 mt-8 grid min-w-[90vw] max-w-6xl grid-flow-row self-center justify-self-center rounded-md bg-slate-50 p-8 text-center dark:bg-slate-800 dark:text-gray-200">
+          {error.message}
+        </div>
+      )
     else if (books != null) {
       if (books.length === 0) {
-        return 'there is no results'
+        return (
+          <div className="mb-8 mt-8 grid min-w-[90vw] max-w-6xl grid-flow-row self-center justify-self-center rounded-md bg-slate-50 p-8 text-center dark:bg-slate-800 dark:text-gray-200">
+            there is no results
+          </div>
+        )
       }
     }
     return <Spinner />
