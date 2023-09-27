@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom'
+
 function AddBooksButton() {
   return (
     <div className="fixed bottom-16 right-5 h-16 w-16 rounded-full bg-indigo-900 text-gray-200 dark:bg-blue-800 sm:bottom-20">
       <button>
-        <a href="/addbook">
+        <Link to="/addbook">
           <svg
             className="h-16 w-16"
             fill="none"
@@ -18,7 +20,7 @@ function AddBooksButton() {
               d="M12 4.5v15m7.5-7.5h-15"
             ></path>
           </svg>
-        </a>
+        </Link>
       </button>
     </div>
   )

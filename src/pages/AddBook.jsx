@@ -10,7 +10,7 @@ function AddBook() {
   }
 
   const search = () => {
-    redirect(`/addbook/${searchText}`)
+    navigate(`/addbook/${searchText}`)
   }
 
   return (
