@@ -25,7 +25,7 @@ function AddToLocal(props) {
 
     if (books && exist == false) {
       localStorage.setItem('books', JSON.stringify([...books, book]))
-    } else {
+    } else if (exist == false) {
       localStorage.setItem('books', JSON.stringify([book]))
     }
     setExist(true)
