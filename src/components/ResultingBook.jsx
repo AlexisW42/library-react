@@ -1,7 +1,9 @@
 import { useLayoutEffect, useState } from 'react'
 import coverImagePlaceholder from '../assets/images/cover-placeholder.jpg'
+import AddToLocal from './AddToLocal'
 
 function ResultingBook(props) {
+  console.log(props)
   const [image, setImage] = useState(null)
   let authors =
     props.volumeInfo.authors === undefined ? [] : props.volumeInfo.authors
@@ -14,7 +16,7 @@ function ResultingBook(props) {
   }, [props.volumeInfo.imageLinks])
 
   return (
-    <div className="m-4 flex h-fit	w-[90vw] flex-row rounded-md bg-slate-50 p-8 text-center dark:bg-slate-800 dark:text-gray-200 md:w-auto">
+    <div className="relative m-4 flex h-fit	w-[90vw] flex-row rounded-md bg-slate-50 p-8 text-center dark:bg-slate-800 dark:text-gray-200 md:w-auto">
       {image ? (
         <img
           className="h-24 object-contain md:h-52"
@@ -38,6 +40,14 @@ function ResultingBook(props) {
         <br />
         <p>{props.volumeInfo.description}</p>
       </div>
+      <AddToLocal
+        id={props.id}
+        title={props.volumeInfo.title}
+        authors
+        pages={props.volumeInfo.pageCount}
+        image={image ? image : ''}
+        setBooks={props.setBooks}
+      />
     </div>
   )
 }
