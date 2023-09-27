@@ -4,7 +4,6 @@ import About from '../pages/About'
 import BookList from '../pages/BookList'
 import AddBook from '../pages/AddBook'
 import AddBooksButton from './AddBooksButton'
-import booksArray from './booksArray'
 import BooksResults from '../pages/BooksResults'
 
 function AppRouter({ searchText }) {
@@ -14,12 +13,9 @@ function AppRouter({ searchText }) {
     const books = JSON.parse(localStorage.getItem('books'))
     if (books) {
       setBooks(books)
-    } else {
-      console.log(booksArray)
-      setBooks(booksArray)
     }
   }, [])
-
+  console.log(books)
   return (
     <Routes>
       <Route
