@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { redirect, useNavigate } from 'react-router-dom'
 
 function AddBook() {
   const navigate = useNavigate()
@@ -10,7 +10,7 @@ function AddBook() {
   }
 
   const search = () => {
-    navigate(`/addbook/${searchText}`)
+    redirect(`/addbook/${searchText}`)
   }
 
   return (
