@@ -4,7 +4,7 @@ import axios from 'axios'
 import ResultingBook from '../components/ResultingBook'
 import Spinner from '../components/Spinner'
 
-function BooksResults() {
+function BooksResults(props) {
   const { search } = useParams()
   const [books, setBooks] = useState(null)
   const [error, setError] = useState(null)
@@ -36,7 +36,13 @@ function BooksResults() {
     <div className="self-center justify-self-center">
       {books
         ? books.map((book) => {
-            return <ResultingBook {...book} key={book.id} />
+            return (
+              <ResultingBook
+                {...book}
+                key={book.id}
+                setBooks={props.setBooks}
+              />
+            )
           })
         : evaluate()}
     </div>

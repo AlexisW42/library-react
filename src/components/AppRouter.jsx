@@ -37,7 +37,10 @@ function AppRouter({ searchText }) {
       />
       <Route path="/about" element={<About />} />
       <Route path="/addbook" element={<AddBook />} />
-      <Route path="/addbook/:search" element={<BooksResults />} />
+      <Route
+        path="/addbook/:search"
+        element={<BooksResults setBooks={setBooks} />}
+      />
     </Routes>
   )
 }
