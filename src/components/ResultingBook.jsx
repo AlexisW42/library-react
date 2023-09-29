@@ -30,24 +30,28 @@ function ResultingBook(props) {
           alt={`cover of ${props.volumeInfo.title}`}
         />
       )}
-      <div className="mx-2 text-left md:mx-8">
-        <h2 className="mt-4 text-lg font-bold">{props.volumeInfo.title}</h2>
-        <p>
-          {authors > 1 ? 'authors: ' : 'author: '}
-          {authors.join(', ')}
-        </p>
-        <p>pages: {props.volumeInfo.pageCount}</p>
-        <br />
+      <div className="ml-2 text-left md:ml-8">
+        <div className="flex grow">
+          <div className="grow">
+            <h2 className="mt-4 text-lg font-bold">{props.volumeInfo.title}</h2>
+            <p>
+              {authors > 1 ? 'authors: ' : 'author: '}
+              {authors.join(', ')}
+            </p>
+            <p>pages: {props.volumeInfo.pageCount}</p>
+          </div>
+          <AddToLocal
+            id={props.id}
+            title={props.volumeInfo.title}
+            authors
+            pages={props.volumeInfo.pageCount}
+            image={image ? image : ''}
+            setBooks={props.setBooks}
+          />
+          <br />
+        </div>
         <p>{props.volumeInfo.description}</p>
       </div>
-      <AddToLocal
-        id={props.id}
-        title={props.volumeInfo.title}
-        authors
-        pages={props.volumeInfo.pageCount}
-        image={image ? image : ''}
-        setBooks={props.setBooks}
-      />
     </div>
   )
 }

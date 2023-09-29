@@ -37,7 +37,7 @@ function AddToLocal(props) {
   return (
     <button
       onClick={AddBooktoLocal}
-      className="absolute right-0 mr-8 rounded-lg bg-indigo-900 px-4 py-2 text-gray-300 dark:bg-blue-800"
+      className="ml-4 inline-block h-min justify-self-end rounded-lg bg-indigo-900 px-4 py-2 text-gray-300 dark:bg-blue-800"
     >
       {exist ? 'Added' : 'Add'}
     </button>
